@@ -27,3 +27,7 @@ Rebuild script: [`scripts/build_carousel.py`](scripts/build_carousel.py)
 
 1. Upload `slides/01_cover.jpg` … `slides/10_cta.jpg` as an Instagram carousel (in order).
 2. Paste the caption from `instagram_caption.txt`.
+
+## PR
+
+Carousel delivered via cloud agent for Instagram posting.
