@@ -55,3 +55,11 @@ Vertical MP4 ready for Reels:
 
 **How to post:** Instagram app → **+** → **Reel** → upload this MP4 → add music → paste caption → Share.
 
+## Lava fire-type edition
+
+Slides now use cropped subjects on a fiery lava/ember background to match Charizard (Fire).
+
+- Carousel: `slides/01_cover.jpg` … `slides/13_cta.jpg` (13 slides)
+- Reel: `reels/tcg_hs_charizard_glvx_reel.mp4` (1080×1920)
+- Preview: https://htmlpreview.github.io/?https://github.com/phil1up/Insta/blob/cursor/charizard-glvx-carousel-0114/preview.html
+
