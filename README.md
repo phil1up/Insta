@@ -63,3 +63,10 @@ Slides now use cropped subjects on a fiery lava/ember background to match Chariz
 - Reel: `reels/tcg_hs_charizard_glvx_reel.mp4` (1080×1920)
 - Preview: https://htmlpreview.github.io/?https://github.com/phil1up/Insta/blob/cursor/charizard-glvx-carousel-0114/preview.html
 
+## Hospital edition (current)
+
+Bright clinical hospital background so **card edges and whitening stay visible**.
+
+- Damage slides use a white clinical mat (no edge-shaving cutout)
+- Reel + 13 slides updated
+
