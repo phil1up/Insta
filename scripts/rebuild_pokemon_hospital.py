@@ -101,7 +101,7 @@ def text_size(draw, text, fnt):
 
 
 def brand(im: Image.Image, status: str) -> Image.Image:
-    """status: CARD BOO-BOO or HEALED"""
+    """status: CARD BOO-BOO, HEALED, or DISCHARGED"""
     im = im.convert("RGBA")
     overlay = Image.new("RGBA", im.size, (0, 0, 0, 0))
     d = ImageDraw.Draw(overlay)
@@ -126,8 +126,8 @@ def brand(im: Image.Image, status: str) -> Image.Image:
     d.text((MARGIN, SIZE - MARGIN - 28), "CHARIZARD G LV.X  ·  DP45", font=f_small, fill=SILVER)
 
     # Status badge
-    is_healed = status.upper() == "HEALED"
-    accent = TEAL if is_healed else PINK
+    is_positive = status.upper() in {"HEALED", "DISCHARGED"}
+    accent = TEAL if is_positive else PINK
     tw, th = text_size(d, status, f_status)
     pad_x, pad_y = 20, 12
     bx1 = SIZE - MARGIN - tw - pad_x * 2
@@ -177,29 +177,45 @@ def cover(im: Image.Image) -> Image.Image:
     return base
 
 
-def healed_slide(im: Image.Image) -> Image.Image:
+def discharged_slide(im: Image.Image) -> Image.Image:
+    """Finale: DISCHARGED with full bill of health."""
     im = im.convert("RGBA")
     overlay = Image.new("RGBA", im.size, (0, 0, 0, 0))
     d = ImageDraw.Draw(overlay)
-    for i in range(320):
-        a = int(225 * (i / 320) ** 1.1)
-        d.line([(0, SIZE - 320 + i), (SIZE, SIZE - 320 + i)], fill=(12, 18, 24, a))
+    for i in range(360):
+        a = int(230 * (i / 360) ** 1.1)
+        d.line([(0, SIZE - 360 + i), (SIZE, SIZE - 360 + i)], fill=(12, 18, 24, a))
     for i in range(110):
         a = int(150 * (1 - i / 110))
         d.line([(0, i), (SIZE, i)], fill=(12, 18, 24, a))
     base = Image.alpha_composite(im, overlay).convert("RGB")
     d = ImageDraw.Draw(base)
     f_brand = font("BebasNeue-Regular.ttf", 48)
-    f_big = font("BebasNeue-Regular.ttf", 86)
-    f_sub = font("Montserrat-SemiBold.ttf", 24)
+    f_big = font("BebasNeue-Regular.ttf", 78)
+    f_mid = font("BebasNeue-Regular.ttf", 48)
+    f_handle = font("Oswald-Bold.ttf", 36)
+    f_sub = font("Montserrat-SemiBold.ttf", 22)
+    f_status = font("Oswald-Bold.ttf", 40)
 
     d.text((MARGIN, 34), "TCG HEALING STATION", font=f_brand, fill=WHITE)
     d.rectangle([MARGIN, 90, MARGIN + 90, 94], fill=TEAL)
 
-    y = SIZE - 250
-    d.text((MARGIN, y), "HEALED", font=f_big, fill=TEAL_SOFT)
-    d.text((MARGIN, y + 90), "@tcg_h_s", font=f_big, fill=WHITE)
-    d.text((MARGIN, y + 175), "DM TO BOOK YOUR CARD  ·  FOLLOW FOR THE HEAL", font=f_sub, fill=SILVER)
+    y = SIZE - 290
+    d.text((MARGIN, y), "DISCHARGED", font=f_big, fill=TEAL_SOFT)
+    d.text((MARGIN, y + 78), "FULL BILL OF HEALTH", font=f_mid, fill=WHITE)
+    d.text((MARGIN, y + 140), "@TCG_H_S", font=f_handle, fill=WHITE)
+    d.text((MARGIN, y + 195), "DM TO BOOK YOUR CARD  ·  FOLLOW FOR THE HEAL", font=f_sub, fill=SILVER)
+
+    # Bottom-right status badge
+    status = "DISCHARGED"
+    tw, th = text_size(d, status, f_status)
+    pad_x, pad_y = 20, 12
+    bx1 = SIZE - MARGIN - tw - pad_x * 2
+    by1 = SIZE - MARGIN - th - pad_y * 2 - 8
+    bx2, by2 = SIZE - MARGIN, SIZE - MARGIN - 8
+    d.rounded_rectangle([bx1, by1, bx2, by2], radius=8, fill=(16, 22, 28))
+    d.rectangle([bx1, by1, bx1 + 6, by2], fill=TEAL)
+    d.text((bx1 + pad_x + 4, by1 + pad_y - 2), status, font=f_status, fill=WHITE)
     return base
 
 
@@ -263,7 +279,7 @@ def main():
         photo = enhance(Image.open(SRC / src))
         return photo_on_mat(photo, hospital_bg(variant), scale=scale)
 
-    # Before = CARD BOO-BOO, final = HEALED
+    # Intake = CARD BOO-BOO, mid = HEALED, finale = DISCHARGED
     slides = [
         ("01_cover.jpg", cover(make("IMG_5547.jpg", 0, 0.70))),
         ("02_inspection.jpg", brand(make("IMG_5533.jpg", 1, 0.80), "CARD BOO-BOO")),
@@ -271,13 +287,13 @@ def main():
         ("04_weakness_scope.jpg", brand(make("IMG_5534.jpg", 3, 0.80), "CARD BOO-BOO")),
         ("05_edge_whitening.jpg", brand(make("IMG_5537.jpg", 4, 0.82), "CARD BOO-BOO")),
         ("06_surface_wear.jpg", brand(make("IMG_5531.jpg", 5, 0.78), "CARD BOO-BOO")),
-        ("07_weakness_detail.jpg", brand(make("IMG_5532.jpg", 6, 0.78), "CARD BOO-BOO")),
-        ("08_corner_wear.jpg", brand(make("IMG_5550.jpg", 7, 0.80), "CARD BOO-BOO")),
-        ("09_promo_edge.jpg", brand(make("IMG_5549.jpg", 8, 0.80), "CARD BOO-BOO")),
-        ("10_border_detail.jpg", brand(make("IMG_5548.jpg", 9, 0.80), "CARD BOO-BOO")),
-        ("11_holo_scuffs.jpg", brand(make("IMG_5557.jpg", 10, 0.80), "CARD BOO-BOO")),
-        ("12_nameplate.jpg", brand(make("IMG_5551.jpg", 11, 0.80), "CARD BOO-BOO")),
-        ("13_healed.jpg", healed_slide(make("IMG_5529.jpg", 12, 0.72))),
+        ("07_weakness_detail.jpg", brand(make("IMG_5532.jpg", 6, 0.78), "HEALED")),
+        ("08_corner_wear.jpg", brand(make("IMG_5550.jpg", 7, 0.80), "HEALED")),
+        ("09_promo_edge.jpg", brand(make("IMG_5549.jpg", 8, 0.80), "HEALED")),
+        ("10_border_detail.jpg", brand(make("IMG_5548.jpg", 9, 0.80), "HEALED")),
+        ("11_holo_scuffs.jpg", brand(make("IMG_5557.jpg", 10, 0.80), "HEALED")),
+        ("12_nameplate.jpg", brand(make("IMG_5551.jpg", 11, 0.80), "HEALED")),
+        ("13_discharged.jpg", discharged_slide(make("IMG_5529.jpg", 12, 0.72))),
     ]
 
     paths = []
