@@ -70,3 +70,11 @@ Bright clinical hospital background so **card edges and whitening stay visible**
 - Damage slides use a white clinical mat (no edge-shaving cutout)
 - Reel + 13 slides updated
 
+## Pokemon hospital edition (current)
+
+Background: Pokemon nurses/doctors in hospital with tools.
+
+- Before slides labeled **CARD BOO-BOO**
+- Final slide labeled **HEALED**
+- Reel updated
+
