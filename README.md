@@ -43,3 +43,15 @@ https://github.com/phil1up/Insta/blob/cursor/charizard-glvx-carousel-0114/slides
 
 On GitHub: tap the image → it opens full size. On phone: tap the image, then tap the download / share icon if you want it in Photos.
 
+
+## Instagram Reel (upload this)
+
+Vertical MP4 ready for Reels:
+
+- File: [`reels/tcg_hs_charizard_glvx_reel.mp4`](reels/tcg_hs_charizard_glvx_reel.mp4)
+- Size: 1080×1920 (9:16)
+- Length: ~18 seconds
+- Caption: [`reels/reel_caption.txt`](reels/reel_caption.txt)
+
+**How to post:** Instagram app → **+** → **Reel** → upload this MP4 → add music → paste caption → Share.
+
