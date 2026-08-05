@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Rebuild carousel on Pokemon hospital background with CARD BOO-BOO / HEALED labels."""
+"""Rebuild carousel on Pokemon hospital background with CARD BOO-BOO / HEALED / DISCHARGED labels."""
 
 from __future__ import annotations
 
@@ -302,6 +302,11 @@ def main():
         im.save(p, "JPEG", quality=93, optimize=True)
         paths.append(p)
         print("wrote", p)
+        # Keep legacy filename for the finale slide
+        if name == "13_discharged.jpg":
+            legacy = OUT / "13_healed.jpg"
+            im.save(legacy, "JPEG", quality=93, optimize=True)
+            print("wrote", legacy)
 
     Path("/agent/output/instagram_caption.txt").write_text(
         """Charizard G LV.X · DP Promo
