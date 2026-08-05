@@ -80,7 +80,7 @@
       i = (n + imgs.length) % imgs.length;
       imgs.forEach((img, idx) => img.classList.toggle("active", idx === i));
       [...dots.children].forEach((d, idx) => d.classList.toggle("on", idx === i));
-      document.getElementById("count").textContent = ;
+      document.getElementById("count").textContent = (i + 1) + " / " + imgs.length;
       document.getElementById("label").textContent = labels[i];
     }
     document.getElementById("prev").onclick = () => show(i - 1);
