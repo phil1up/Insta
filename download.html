@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<title>Download Reel · @tcg_h_s</title>
+<style>
+:root{--bg:#0b0f12;--card:#141a1f;--teal:#2ea0aa;--teal2:#3ec4cf;--text:#f4f6f7;--muted:#9aa3a8;--line:#243038}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{margin:0;min-height:100vh;background:radial-gradient(900px 500px at 50% -10%,#16363a 0%,var(--bg) 55%);color:var(--text);font-family:Segoe UI,system-ui,-apple-system,sans-serif;padding:20px 16px 40px;display:flex;flex-direction:column;align-items:center}
+.wrap{width:min(420px,100%)}
+h1{margin:0 0 6px;font-size:1.4rem;letter-spacing:.02em}
+.sub{color:var(--muted);margin:0 0 18px;font-size:.95rem;line-height:1.4}
+.player{background:#000;border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,.45)}
+video{display:block;width:100%;aspect-ratio:9/16;max-height:62vh;background:#000;object-fit:contain}
+.meta{display:flex;justify-content:space-between;gap:10px;padding:12px 14px;font-size:.82rem;color:var(--muted);background:var(--card)}
+.actions{display:grid;gap:10px;margin-top:16px}
+a.btn,button.btn{display:block;text-align:center;text-decoration:none;border:0;border-radius:14px;padding:16px 18px;font-weight:800;font-size:1.05rem;cursor:pointer}
+.btn-primary{background:linear-gradient(180deg,var(--teal2),var(--teal));color:#041416}
+.btn-secondary{background:var(--card);color:var(--text);border:1px solid var(--line)}
+.help{margin-top:18px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px 16px}
+.help h2{margin:0 0 8px;font-size:.95rem}
+.help ol{margin:0;padding-left:18px;color:var(--muted);line-height:1.55;font-size:.9rem}
+.help li{margin-bottom:6px}
+.caption{margin-top:14px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px 16px}
+.caption h2{margin:0 0 8px;font-size:.95rem}
+.caption pre{margin:0;white-space:pre-wrap;color:var(--muted);font:inherit;font-size:.86rem;line-height:1.45}
+.copy{margin-top:10px;width:100%}
+.note{margin-top:14px;text-align:center;color:var(--muted);font-size:.8rem}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>TCG Healing Station</h1>
+  <p class="sub">Tap play, then download/save this Reel to your phone for Instagram.</p>
+
+  <div class="player">
+    <video id="vid" controls playsinline preload="metadata"
+      poster="https://raw.githubusercontent.com/phil1up/Insta/cursor/charizard-glvx-carousel-0114/slides/13_discharged.jpg"
+      src="https://raw.githubusercontent.com/phil1up/Insta/cursor/charizard-glvx-carousel-0114/reels/tcg_hs_charizard_glvx_reel.mp4">
+    </video>
+    <div class="meta">
+      <span>@tcg_h_s</span>
+      <span>1080×1920 · ~23s · 7.7MB</span>
+    </div>
+  </div>
+
+  <div class="actions">
+    <a class="btn btn-primary"
+       id="dl"
+       href="https://raw.githubusercontent.com/phil1up/Insta/cursor/charizard-glvx-carousel-0114/reels/tcg_hs_charizard_glvx_reel.mp4"
+       download="tcg_hs_charizard_glvx_reel.mp4">
+      Download MP4
+    </a>
+    <a class="btn btn-secondary"
+       href="https://github.com/phil1up/Insta/raw/cursor/charizard-glvx-carousel-0114/reels/tcg_hs_charizard_glvx_reel.mp4">
+      Open file in browser
+    </a>
+  </div>
+
+  <div class="help">
+    <h2>iPhone</h2>
+    <ol>
+      <li>Tap the video to play.</li>
+      <li>Tap the <strong>Share</strong> icon.</li>
+      <li>Tap <strong>Save Video</strong>.</li>
+      <li>Open Instagram → Reels → pick it from your Camera Roll.</li>
+    </ol>
+    <h2 style="margin-top:14px">Android</h2>
+    <ol>
+      <li>Tap <strong>Download MP4</strong>.</li>
+      <li>Open the Downloads folder / Files app.</li>
+      <li>Open Instagram → Reels → pick the saved video.</li>
+    </ol>
+  </div>
+
+  <div class="caption">
+    <h2>Caption (copy/paste)</h2>
+    <pre id="cap">Charizard G LV.X · DP Promo
+
+Admitted with a card boo-boo…
+Discharged with a full bill of health 🏥💚
+
+Swipe the heal
+@tcg_h_s · TCG Healing Station
+DM to book your card.
+
+#tcghealingstation #tcg_h_s #pokemoncards #pokemontcg #charizard #cardrestoration #cardcleaning #healed #cardbooboo #thehobby #pokemoncommunity</pre>
+    <button class="btn btn-secondary copy" id="copy" type="button">Copy caption</button>
+  </div>
+
+  <p class="note">If Download doesn’t start, use Share → Save Video on the player above.</p>
+</div>
+<script>
+document.getElementById("copy").onclick=async()=>{
+  const t=document.getElementById("cap").textContent;
+  try{await navigator.clipboard.writeText(t);document.getElementById("copy").textContent="Copied!";}
+  catch(e){
+    const r=document.createRange();r.selectNodeContents(document.getElementById("cap"));
+    const s=window.getSelection();s.removeAllRanges();s.addRange(r);
+    document.getElementById("copy").textContent="Selected — copy manually";
+  }
+};
+</script>
+</body>
+</html>
