@@ -1,43 +1,40 @@
 <!DOCTYPE html>
-<html lang="en"><head>
-<meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>tcg_h_s · Hospital Preview</title>
+<html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>tcg_h_s · Pokemon Hospital</title>
 <style>
-:root{--bg:#0c0c0e;--teal:#2ea0aa;--text:#f4f4f5;--muted:#a1a1aa}
+:root{--bg:#0c0c0e;--teal:#2ea0aa;--pink:#ff7896;--text:#f4f4f5;--muted:#a1a1aa}
 *{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(1200px 600px at 50% -10%,#16363a 0%,var(--bg) 55%);color:var(--text);font-family:Segoe UI,system-ui,sans-serif;display:flex;flex-direction:column;align-items:center;padding:24px 16px 48px}
 h1{margin:0 0 4px;font-size:1.35rem}.sub{color:var(--muted);margin-bottom:20px}
 .phone{width:min(390px,100%);background:#111;border:1px solid #2a2a2e;border-radius:28px;padding:14px;box-shadow:0 30px 80px rgba(0,0,0,.55)}
 .topbar{display:flex;justify-content:space-between;margin-bottom:10px;font-size:.85rem}.handle{color:var(--teal);font-weight:600}
 .stage{width:100%;aspect-ratio:1;overflow:hidden;border-radius:4px;background:#000}.stage img{width:100%;height:100%;object-fit:cover;display:none}.stage img.active{display:block}
-.dots{display:flex;gap:5px;justify-content:center;margin:12px 0 8px}.dots span{width:6px;height:6px;border-radius:50%;background:#3f3f46}.dots span.on{background:var(--teal)}
+.dots{display:flex;gap:5px;justify-content:center;margin:12px 0 8px;flex-wrap:wrap}.dots span{width:6px;height:6px;border-radius:50%;background:#3f3f46}.dots span.on{background:var(--pink)}
 .nav{display:flex;gap:8px}button{flex:1;border:0;border-radius:10px;padding:12px;font-weight:700;cursor:pointer;background:#1f1f23;color:var(--text)}button.primary{background:var(--teal);color:#fff}
 .label{text-align:center;color:var(--muted);font-size:.8rem;margin-top:6px}
 .grid{margin-top:28px;width:min(920px,100%);display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:10px}
 .grid a{display:block;border-radius:10px;overflow:hidden;border:1px solid #27272a;aspect-ratio:1}.grid img{width:100%;height:100%;object-fit:cover;display:block}
 </style></head><body>
 <h1>TCG HEALING STATION</h1>
-<div class="sub">@tcg_h_s · hospital edition · edge damage visible</div>
-<div class="phone">
-<div class="topbar"><span class="handle">@tcg_h_s</span><span id="count">1 / 13</span></div>
+<div class="sub">Pokemon hospital · CARD BOO-BOO → HEALED</div>
+<div class="phone"><div class="topbar"><span class="handle">@tcg_h_s</span><span id="count">1 / 13</span></div>
 <div class="stage" id="stage">
-      <img class="active" src="https://raw.githubusercontent.com/phil1up/Insta/cursor/charizard-glvx-carousel-0114/slides/01_cover.jpg" alt="Cover" />
-      <img src="https://raw.githubusercontent.com/phil1up/Insta/cursor/charizard-glvx-carousel-0114/slides/02_inspection.jpg" alt="Inspection" />
-      <img src="https://raw.githubusercontent.com/phil1up/Insta/cursor/charizard-glvx-carousel-0114/slides/03_under_scope.jpg" alt="Under the scope" />
-      <img src="https://raw.githubusercontent.com/phil1up/Insta/cursor/charizard-glvx-carousel-0114/slides/04_weakness_scope.jpg" alt="Weakness check" />
-      <img src="https://raw.githubusercontent.com/phil1up/Insta/cursor/charizard-glvx-carousel-0114/slides/05_edge_whitening.jpg" alt="Edge whitening" />
-      <img src="https://raw.githubusercontent.com/phil1up/Insta/cursor/charizard-glvx-carousel-0114/slides/06_surface_wear.jpg" alt="Surface wear" />
-      <img src="https://raw.githubusercontent.com/phil1up/Insta/cursor/charizard-glvx-carousel-0114/slides/07_weakness_detail.jpg" alt="Weakness detail" />
-      <img src="https://raw.githubusercontent.com/phil1up/Insta/cursor/charizard-glvx-carousel-0114/slides/08_corner_wear.jpg" alt="Corner wear" />
-      <img src="https://raw.githubusercontent.com/phil1up/Insta/cursor/charizard-glvx-carousel-0114/slides/09_promo_edge.jpg" alt="Promo edge" />
-      <img src="https://raw.githubusercontent.com/phil1up/Insta/cursor/charizard-glvx-carousel-0114/slides/10_border_detail.jpg" alt="Border detail" />
-      <img src="https://raw.githubusercontent.com/phil1up/Insta/cursor/charizard-glvx-carousel-0114/slides/11_holo_scuffs.jpg" alt="Holo scuffs" />
-      <img src="https://raw.githubusercontent.com/phil1up/Insta/cursor/charizard-glvx-carousel-0114/slides/12_nameplate.jpg" alt="Nameplate" />
-      <img src="https://raw.githubusercontent.com/phil1up/Insta/cursor/charizard-glvx-carousel-0114/slides/13_cta.jpg" alt="CTA" />
+      <img class="active" src="https://raw.githubusercontent.com/phil1up/Insta/cursor/charizard-glvx-carousel-0114/slides/01_cover.jpg" alt="Cover · CARD BOO-BOO" />
+      <img src="https://raw.githubusercontent.com/phil1up/Insta/cursor/charizard-glvx-carousel-0114/slides/02_inspection.jpg" alt="CARD BOO-BOO" />
+      <img src="https://raw.githubusercontent.com/phil1up/Insta/cursor/charizard-glvx-carousel-0114/slides/03_under_scope.jpg" alt="CARD BOO-BOO" />
+      <img src="https://raw.githubusercontent.com/phil1up/Insta/cursor/charizard-glvx-carousel-0114/slides/04_weakness_scope.jpg" alt="CARD BOO-BOO" />
+      <img src="https://raw.githubusercontent.com/phil1up/Insta/cursor/charizard-glvx-carousel-0114/slides/05_edge_whitening.jpg" alt="CARD BOO-BOO" />
+      <img src="https://raw.githubusercontent.com/phil1up/Insta/cursor/charizard-glvx-carousel-0114/slides/06_surface_wear.jpg" alt="CARD BOO-BOO" />
+      <img src="https://raw.githubusercontent.com/phil1up/Insta/cursor/charizard-glvx-carousel-0114/slides/07_weakness_detail.jpg" alt="CARD BOO-BOO" />
+      <img src="https://raw.githubusercontent.com/phil1up/Insta/cursor/charizard-glvx-carousel-0114/slides/08_corner_wear.jpg" alt="CARD BOO-BOO" />
+      <img src="https://raw.githubusercontent.com/phil1up/Insta/cursor/charizard-glvx-carousel-0114/slides/09_promo_edge.jpg" alt="CARD BOO-BOO" />
+      <img src="https://raw.githubusercontent.com/phil1up/Insta/cursor/charizard-glvx-carousel-0114/slides/10_border_detail.jpg" alt="CARD BOO-BOO" />
+      <img src="https://raw.githubusercontent.com/phil1up/Insta/cursor/charizard-glvx-carousel-0114/slides/11_holo_scuffs.jpg" alt="CARD BOO-BOO" />
+      <img src="https://raw.githubusercontent.com/phil1up/Insta/cursor/charizard-glvx-carousel-0114/slides/12_nameplate.jpg" alt="CARD BOO-BOO" />
+      <img src="https://raw.githubusercontent.com/phil1up/Insta/cursor/charizard-glvx-carousel-0114/slides/13_healed.jpg" alt="HEALED" />
 </div>
 <div class="dots" id="dots"></div>
-<div class="label" id="label">Cover</div>
-<div class="nav"><button id="prev" type="button">Prev</button><button id="next" class="primary" type="button">Next</button></div>
-</div>
+<div class="label" id="label">Cover · CARD BOO-BOO</div>
+<div class="nav"><button id="prev" type="button">Prev</button><button id="next" class="primary" type="button">Next</button></div></div>
 <div class="grid">
     <a href="https://raw.githubusercontent.com/phil1up/Insta/cursor/charizard-glvx-carousel-0114/slides/01_cover.jpg"><img src="https://raw.githubusercontent.com/phil1up/Insta/cursor/charizard-glvx-carousel-0114/slides/01_cover.jpg" alt="1" /></a>
     <a href="https://raw.githubusercontent.com/phil1up/Insta/cursor/charizard-glvx-carousel-0114/slides/02_inspection.jpg"><img src="https://raw.githubusercontent.com/phil1up/Insta/cursor/charizard-glvx-carousel-0114/slides/02_inspection.jpg" alt="2" /></a>
@@ -51,10 +48,10 @@ h1{margin:0 0 4px;font-size:1.35rem}.sub{color:var(--muted);margin-bottom:20px}
     <a href="https://raw.githubusercontent.com/phil1up/Insta/cursor/charizard-glvx-carousel-0114/slides/10_border_detail.jpg"><img src="https://raw.githubusercontent.com/phil1up/Insta/cursor/charizard-glvx-carousel-0114/slides/10_border_detail.jpg" alt="10" /></a>
     <a href="https://raw.githubusercontent.com/phil1up/Insta/cursor/charizard-glvx-carousel-0114/slides/11_holo_scuffs.jpg"><img src="https://raw.githubusercontent.com/phil1up/Insta/cursor/charizard-glvx-carousel-0114/slides/11_holo_scuffs.jpg" alt="11" /></a>
     <a href="https://raw.githubusercontent.com/phil1up/Insta/cursor/charizard-glvx-carousel-0114/slides/12_nameplate.jpg"><img src="https://raw.githubusercontent.com/phil1up/Insta/cursor/charizard-glvx-carousel-0114/slides/12_nameplate.jpg" alt="12" /></a>
-    <a href="https://raw.githubusercontent.com/phil1up/Insta/cursor/charizard-glvx-carousel-0114/slides/13_cta.jpg"><img src="https://raw.githubusercontent.com/phil1up/Insta/cursor/charizard-glvx-carousel-0114/slides/13_cta.jpg" alt="13" /></a>
+    <a href="https://raw.githubusercontent.com/phil1up/Insta/cursor/charizard-glvx-carousel-0114/slides/13_healed.jpg"><img src="https://raw.githubusercontent.com/phil1up/Insta/cursor/charizard-glvx-carousel-0114/slides/13_healed.jpg" alt="13" /></a>
 </div>
 <script>
-const labels=["Cover", "Inspection", "Under the scope", "Weakness check", "Edge whitening", "Surface wear", "Weakness detail", "Corner wear", "Promo edge", "Border detail", "Holo scuffs", "Nameplate", "CTA"];
+const labels=["Cover · CARD BOO-BOO", "CARD BOO-BOO", "CARD BOO-BOO", "CARD BOO-BOO", "CARD BOO-BOO", "CARD BOO-BOO", "CARD BOO-BOO", "CARD BOO-BOO", "CARD BOO-BOO", "CARD BOO-BOO", "CARD BOO-BOO", "CARD BOO-BOO", "HEALED"];
 const imgs=[...document.querySelectorAll("#stage img")];
 const dots=document.getElementById("dots");
 imgs.forEach((_,i)=>{const s=document.createElement("span");if(i===0)s.classList.add("on");dots.appendChild(s);});
@@ -63,5 +60,4 @@ function show(n){i=(n+imgs.length)%imgs.length;imgs.forEach((img,idx)=>img.class
 document.getElementById("prev").onclick=()=>show(i-1);
 document.getElementById("next").onclick=()=>show(i+1);
 document.getElementById("stage").onclick=()=>show(i+1);
-</script>
-</body></html>
+</script></body></html>
