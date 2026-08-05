@@ -47,6 +47,7 @@ button.btn,a.btn{display:block;text-align:center;text-decoration:none;border:0;b
     <video id="vid" controls playsinline preload="metadata"
       poster="https://raw.githubusercontent.com/phil1up/Insta/cursor/charizard-glvx-carousel-0114/slides/13_discharged.jpg"
       src="https://raw.githubusercontent.com/phil1up/Insta/cursor/charizard-glvx-carousel-0114/reels/tcg_hs_charizard_glvx_reel.mp4">
+      <!-- playback uses raw URL; Save/Share uses the release download below -->
     </video>
     <div class="meta">
       <span>@tcg_h_s</span>
@@ -57,8 +58,8 @@ button.btn,a.btn{display:block;text-align:center;text-decoration:none;border:0;b
   <div class="actions">
     <button class="btn btn-primary" id="shareBtn" type="button">Save to Photos (Share)</button>
     <a class="btn btn-secondary" id="openMp4"
-       href="https://raw.githubusercontent.com/phil1up/Insta/cursor/charizard-glvx-carousel-0114/reels/tcg_hs_charizard_glvx_reel.mp4">
-      Open video only
+       href="https://github.com/phil1up/Insta/releases/download/reel-v1/tcg_hs_charizard_glvx_reel.mp4">
+      Download MP4 to Files
     </a>
   </div>
   <div class="status" id="status"></div>
@@ -102,7 +103,7 @@ DM to book your card.
   <p class="note">No share icon on the video player is normal. The green button creates the iPhone share sheet for you.</p>
 </div>
 <script>
-const VIDEO_URL = "https://raw.githubusercontent.com/phil1up/Insta/cursor/charizard-glvx-carousel-0114/reels/tcg_hs_charizard_glvx_reel.mp4";
+const VIDEO_URL = "https://github.com/phil1up/Insta/releases/download/reel-v1/tcg_hs_charizard_glvx_reel.mp4";
 const FILE_NAME = "tcg_hs_charizard_glvx_reel.mp4";
 const statusEl = document.getElementById("status");
 const shareBtn = document.getElementById("shareBtn");
