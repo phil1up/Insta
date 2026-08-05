@@ -31,3 +31,15 @@ Rebuild script: [`scripts/build_carousel.py`](scripts/build_carousel.py)
 ## PR
 
 Carousel delivered via cloud agent for Instagram posting.
+
+
+## Preview (with pictures)
+
+**Swipe preview (recommended):**  
+https://htmlpreview.github.io/?https://github.com/phil1up/Insta/blob/cursor/charizard-glvx-carousel-0114/preview.html
+
+**Open one slide (example CTA):**  
+https://github.com/phil1up/Insta/blob/cursor/charizard-glvx-carousel-0114/slides/10_cta.jpg  
+
+On GitHub: tap the image → it opens full size. On phone: tap the image, then tap the download / share icon if you want it in Photos.
+
