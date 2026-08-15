@@ -1,0 +1,35 @@
+HOW TO POST THIS CAROUSEL ON INSTAGRAM
+======================================
+
+Instagram cannot upload a .zip. Use the 10 JPEGs in feed/ (01.jpg → 10.jpg).
+
+Desktop (easiest from this folder)
+----------------------------------
+1. Open Meta Business Suite: https://business.facebook.com
+2. Switch to the @tcg_h_s Instagram account.
+3. Create post → pick Instagram → Carousel.
+4. Upload feed/01.jpg through feed/10.jpg IN ORDER (do not include stories/).
+5. Paste caption.txt into the caption box.
+6. Add alt text from alt_text.txt (one block per slide).
+7. Preview on mobile, then Publish (or Schedule).
+
+iPhone / Android
+----------------
+1. Unzip this pack and save feed/01.jpg … feed/10.jpg to Camera Roll / Gallery.
+   Do not save the story image into the same selection.
+2. Instagram → + → Post → Recents.
+3. Select 01, then 02, then 03 … through 10 (order of first tap is the carousel order).
+4. Leave the crop at original / 4:5. Do not pinch-zoom.
+5. Paste caption.txt.
+6. Edit → Alt text, paste each line from alt_text.txt.
+7. Share.
+
+Stories (optional extra)
+------------------------
+Upload stories/01_hero.jpg as a Story (9:16). Do not add it to the feed carousel.
+
+Do not post
+-----------
+- This zip file itself
+- stories/ inside the feed carousel
+- Any file that is not 01.jpg–10.jpg
